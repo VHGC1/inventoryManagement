@@ -13,6 +13,17 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+    private String sku;
     private String name;
     private double unitPrice;
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", sku='" + sku + '\'' +
+                ", name='" + name + '\'' +
+                ", unitPrice=" + unitPrice +
+                '}';
+    }
 }

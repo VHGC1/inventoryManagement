@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* HEADER */
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+main {
+  padding: 50px 35px;
+}
+
+header {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 10px;
+}
+
+header h1 {
+  margin-right: auto;
+}
+
+header div a {
+  margin-left: 10px;
+  text-decoration: none;
+  color: #000;
+}
+
+.button {
+  padding: 6px 20px;
+  background-color: #fff;
+  border: 1px solid #000;
+  font-size: 14px;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+.save_button:hover {
+  background-color: rgb(78, 226, 78);
+  color: #fff;
+  border-color: rgb(78, 226, 78);
+  transition: 0.3s;
+}
+
+.cancel_button:hover {
+  background-color: rgb(252, 8, 8);
+  color: #fff;
+  border-color: rgb(252, 8, 8);
+  transition: 0.3s;
+}
+
+/* FORM */
+
+.form-container {
+  padding: 20px 0;
+}
+
+.form-control {
+  display: grid;
+  grid-template-columns: 105px 200px;
+  gap: 1rem;
+}
+
+.type {
+  display: grid;
+  grid-template-columns: 105px 200px;
+  gap: 1rem;
+}
+
+.type p {
+  grid-column: 1/span 2;
+}
+
+/* FOOTER */
+
+footer {
+  text-align: center;
+  padding-bottom: 25px;
+}
+
+

@@ -2,6 +2,7 @@ package br.com.ceub.inventoryManagement.controller;
 
 import br.com.ceub.inventoryManagement.domain.dto.ProductCreateRequest;
 import br.com.ceub.inventoryManagement.domain.entities.Product;
+import br.com.ceub.inventoryManagement.repository.ProductRepository;
 import br.com.ceub.inventoryManagement.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +18,9 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
+    @Autowired
+    private ProductRepository productRepository;
+
     @PostMapping
     public ResponseEntity<Product> create(@RequestBody @Valid ProductCreateRequest body) {
         return productService.createProduct(body);
@@ -27,7 +31,13 @@ public class ProductController {
         return productService.productByName(name);
     }
 
-//    @GetMapping
-//    public ResponseEntity<List<Product>> getAllProducts() {
-//    }
+    @GetMapping
+    public ResponseEntity<List<Product>> getAllProducts() {
+        return productService.getAllProducts();
+    }
+
+    @DeleteMapping("/delete")
+    public String massDelete(String toDelete) {
+        return productService.massDelete(toDelete);
+    }
 }

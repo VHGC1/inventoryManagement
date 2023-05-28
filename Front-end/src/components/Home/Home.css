@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* HEADER */
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+main {
+  padding: 50px 35px;
+}
+
+header {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 10px;
+}
+
+header h1 {
+  margin-right: auto;
+}
+
+header div a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: #000;
+}
+
+.button {
+  padding: 6px 20px;
+  background-color: #fff;
+  border: 1px solid #000;
+  font-size: 14px;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+.add_button:hover {
+  background-color: rgb(78, 226, 78);
+  color: #fff;
+  border-color: rgb(78, 226, 78);
+  transition: 0.3s;
+}
+
+.delete_button:hover {
+  background-color: rgb(252, 8, 8);
+  color: #fff;
+  border-color: rgb(252, 8, 8);
+  transition: 0.3s;
+}
+
+/* PRODUCT LIST*/
+
+.product_container {
+  display: grid;
+  /*grid-template-columns: 230px repeat(auto-fill, 231px) 232px;*/
+  grid-template-columns: repeat(auto-fit, minmax(231px, 231px));
+  gap: 1rem;
+  min-height: 70vh;
+  padding: 20px 0;
+}
+
+footer {
+  text-align: center;
+  padding-bottom: 25px;
+}
