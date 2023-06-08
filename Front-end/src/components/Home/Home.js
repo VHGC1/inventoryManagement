@@ -48,13 +48,14 @@ const Home = () => {
       <hr></hr>
 
       <div className="product_container">
-        {products.map(({ id, sku, name, unitPrice }) => (
+        {products.map(({ id, sku, name, unitPrice, quantity }) => (
           <ProductCard
             key={id}
             id={id}
             sku={sku}
             name={name}
             price={unitPrice}
+            quantity={quantity}
           />
         ))}
       </div>

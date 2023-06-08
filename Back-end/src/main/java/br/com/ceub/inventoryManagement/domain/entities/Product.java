@@ -16,14 +16,5 @@ public class Product {
     private String sku;
     private String name;
     private double unitPrice;
-
-    @Override
-    public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", sku='" + sku + '\'' +
-                ", name='" + name + '\'' +
-                ", unitPrice=" + unitPrice +
-                '}';
-    }
+    private int quantity;
 }

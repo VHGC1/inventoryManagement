@@ -8,6 +8,7 @@ const AddProduct = () => {
   const [sku, setSku] = useState("");
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
+  const [quantity, setQuantity] = useState(0);
   const [responseCode, setResponseCode] = useState("");
   const [error, setError] = useState(false);
   const [messageError, setMessageError] = useState("");
@@ -22,6 +23,7 @@ const AddProduct = () => {
         sku: sku,
         name: name,
         unitPrice: price,
+        quantity: quantity
       })
       .then((response) => {
         setResponseCode(response.status);
@@ -63,7 +65,7 @@ const AddProduct = () => {
           <hr />
           <div className="form-container">
             <div className="form-control">
-              <label for="sku">SKU</label>
+              <label htmlFor="sku">SKU</label>
               <input
                 name="sku"
                 id="sku"
@@ -73,7 +75,7 @@ const AddProduct = () => {
                 onChange={(e) => setSku(e.target.value)}
                 required
               />
-              <label for="name">Name</label>
+              <label htmlFor="name">Name</label>
               <input
                 name="name"
                 id="name"
@@ -83,14 +85,24 @@ const AddProduct = () => {
                 onChange={(e) => setName(e.target.value)}
                 required
               />
-              <label for="price">Price ($)</label>
+              <label htmlFor="price">Price ($)</label>
               <input
                 name="price"
                 id="price"
                 type="text"
-                pattern="^(-?)(0|([1-9][0-9]*))(\\.[0-9]+)?$"
+                pattern="^\d{1,3}\.\d{2}$"
                 value={price}
                 onChange={(e) => setPrice(e.target.value)}
+                required
+              />
+              <label htmlFor="quantity">Quantity</label>
+              <input
+                name="quantity"
+                id="quantity"
+                type="number"
+                pattern="^(-?)(0|([1-9][1-9][0-9]*))?$"
+                value={quantity}
+                onChange={(e) => setQuantity(e.target.value)}
                 required
               />
             </div>

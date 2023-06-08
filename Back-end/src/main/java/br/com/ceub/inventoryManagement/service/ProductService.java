@@ -25,10 +25,15 @@ public class ProductService {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "O Sku deve ser unico!");
         }
 
+        if(body.getQuantity() < 0) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "A quantidade não pode ser menor do que 0");
+        }
+
         Product product = new Product();
         product.setName(body.getName());
         product.setUnitPrice(body.getUnitPrice());
         product.setSku(body.getSku());
+        product.setQuantity(body.getQuantity());
 
         Product response = productRepository.save(product);
 

@@ -17,4 +17,5 @@ public class ProductCreateRequest {
     @Positive(message = "Informe um preço unitário válido!")
     @NotNull(message = "O preço unitário é obrigatório!")
     private Double unitPrice;
+    private int quantity = 0;
 }
